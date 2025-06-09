@@ -1,0 +1,211 @@
+%===============================================================
+%MEMORIA PROYECTO FIN DE CARRERA
+%Realizada por Eduardo de Diego Lucas
+%TELECO + ITIS, 2012
+%===============================================================
+\documentclass[a4paper,12pt,twoside]{book}
+
+%===============================================================
+%PAQUETES UTILIZADOS
+%===============================================================
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage[colorlinks=false,linkcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage[toc,page]{appendix}
+\usepackage{amsthm}
+\usepackage[Lenny]{fncychap}
+\usepackage{moreverb}
+\usepackage{pifont}
+\usepackage{color}
+\usepackage{ae,aecompl}
+
+%\usepackage{longtable}
+%\usepackage{multicol}
+%\usepackage{multirow}
+
+%\usepackage{gloss}
+%\usepackage{makeidx}
+
+% DEFINICIN DEL ESTILO ________________________________________________
+\input{./Estilo/estiloEnPreambulo}
+
+%===============================================================
+%RUPTURA DE SÍLABAS
+%===============================================================
+\input{./Hyphenations/hyphenations}
+
+%\makeindex
+% Para hacer el índice Alfabético.
+
+%\makegloss
+% Para hacer el Glosario.
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%===============================================================
+%DEFINICIÓN DE ESTILO
+%===============================================================
+    \input{./Estilo/estiloEnDocumento}
+%===============================================================
+%PORTADA
+%===============================================================
+    \thispagestyle{empty}
+    \input{./Portada/portada}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%TRIBUNAL
+%===============================================================
+    \thispagestyle{empty}
+    \input{./Tribunal/tribunal}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%CITA
+%===============================================================
+    \thispagestyle{empty}
+    \input{./Cita/cita}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%DEDICATORIA
+%===============================================================
+    \thispagestyle{empty}
+    \input{./Dedicatoria/dedicatoria}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%AGRADECIMIENTOS
+%===============================================================
+    \thispagestyle{empty}
+    \addcontentsline{toc}{chapter}{Agradecimientos}
+    \input{./Agradecimientos/agradecimientos}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+
+%===============================================================
+%RESUMEN
+%===============================================================
+    \thispagestyle{empty}
+    \addcontentsline{toc}{chapter}{Resumen}
+    \input{./Resumen/resumen}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+
+%===============================================================
+%ABSTRACT
+%===============================================================
+    \thispagestyle{empty}
+    \addcontentsline{toc}{chapter}{Abstract}
+    \input{./Abstract/abstract}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+
+%===============================================================
+%ÍNDICES
+%===============================================================
+%\pagestyle{plain}
+    \tableofcontents
+    \newpage \thispagestyle{empty} \cleardoublepage
+%\listoffigures
+%\newpage \thispagestyle{empty} \cleardoublepage
+%\listoftables
+
+%===============================================================
+%GLOSARIO
+%===============================================================
+    \thispagestyle{empty}
+%\addcontentsline{toc}{chapter}{Glosario}
+    \input{./Glosario/glosario}
+    \newpage \thispagestyle{empty} \cleardoublepage
+%%----------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%===============================================================
+%ENCABEZADO DE TODO EL DOCUMENTO
+%===============================================================
+    \pagestyle{fancy}
+
+    \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+    \fancyhf{} \fancyhead[LE,RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+
+%===============================================================
+%INTRODUCCIÓN
+%===============================================================
+    \input{./Introduccion/introduccion}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%CONTEXTO TECNOLÓGICO
+%===============================================================
+    \input{./ContextoTecnologico/contextotec}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%PROPIEDADES Y BANDAS
+%===============================================================
+    \input{./Propiedades_Bandas/propiedades_bandas}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%METODOLOGÍA
+%===============================================================
+    \input{./Metodologia/metodologia}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%SIMULACIONES
+%===============================================================
+    \input{./Simulaciones/simulaciones}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%CONCLUSIONES Y LÍNEAS FUTURAS
+%===============================================================
+    \input{./Conclusiones/conclusiones}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%===============================================================
+%APÉNDICE I. PRESUPUESTO
+%===============================================================
+    \addcontentsline{toc}{chapter}{Apéndice I. Presupuesto}
+    \input{./Presupuesto/presupuesto}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+%===============================================================
+%APÉNDICE II. ARTÍCULO WIKI
+%===============================================================
+    \addcontentsline{toc}{chapter}{Apéndice II. Artículo wiki}
+    \input{./Apendice/apendice}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+% ----------------- BIBLIOGRAFÍA -----------------------
+
+    \addcontentsline{toc}{chapter}{Bibliografía}
+    \bibliographystyle{unsrt}
+    \bibliography{./Bibliografia/biblio}
+    \nocite{*}
+    \newpage \thispagestyle{empty} \cleardoublepage
+
+
+\end{document}
